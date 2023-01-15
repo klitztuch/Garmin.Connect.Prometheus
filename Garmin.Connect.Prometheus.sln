@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garmin.Connect.Prometheus.Worker", "Garmin.Connect.Prometheus.Worker\Garmin.Connect.Prometheus.Worker.csproj", "{171E4E12-D707-48CE-AB0D-82E0E1F315CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garmin.Connect.Prometheus.Lib", "Garmin.Connect.Prometheus.Lib\Garmin.Connect.Prometheus.Lib.csproj", "{6DA6DFE6-0337-48AB-A34D-9AC9094EB56E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{171E4E12-D707-48CE-AB0D-82E0E1F315CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{171E4E12-D707-48CE-AB0D-82E0E1F315CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{171E4E12-D707-48CE-AB0D-82E0E1F315CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA6DFE6-0337-48AB-A34D-9AC9094EB56E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA6DFE6-0337-48AB-A34D-9AC9094EB56E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA6DFE6-0337-48AB-A34D-9AC9094EB56E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA6DFE6-0337-48AB-A34D-9AC9094EB56E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
