@@ -7,7 +7,7 @@ public class UserSummary : IUserSummary
 {
     private const string METRIC_NAME = "usersummary";
     private readonly IGarminConnectClient _garminConnectClient;
-    private List<Gauge>? _gauges;
+    public List<Gauge>? Gauges;
 
     public UserSummary(IGarminConnectClient garminConnectClient)
     {
@@ -18,12 +18,12 @@ public class UserSummary : IUserSummary
     public async Task Export()
     {
         var userSummary = await _garminConnectClient.GetUserSummary(DateTime.Today.AddDays(-1));
-        if (_gauges == null)
+        if (Gauges == null)
         {
             return;
         }
 
-        foreach (var gauge in _gauges)
+        foreach (var gauge in Gauges)
         {
             var property = userSummary.GetType()
                 .GetProperties()
@@ -38,7 +38,7 @@ public class UserSummary : IUserSummary
     private void InitMetrics()
     {
         var dummyGarminStats = new GarminStats();
-        _gauges = dummyGarminStats.GetType()
+        Gauges = dummyGarminStats.GetType()
             .GetProperties()
             .Select(propertyInfo => Metrics.CreateGauge($"{MetricDefaults.METRIC_PREFIX}_{METRIC_NAME}_{propertyInfo.Name}", propertyInfo.Name)).ToList();
     }
