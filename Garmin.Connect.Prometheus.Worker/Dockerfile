@@ -1,11 +1,12 @@
-﻿FROM mcr.microsoft.com/dotnet/runtime:7.0 AS base
+﻿FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
+EXPOSE 5000
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Garmin.Connect.Prometheus.Worker/Garmin.Connect.Prometheus.Worker.csproj", "Garmin.Connect.Prometheus.Worker/"]
+COPY "Garmin.Connect.Prometheus.Worker.csproj" "Garmin.Connect.Prometheus.Worker/"
 RUN dotnet restore "Garmin.Connect.Prometheus.Worker/Garmin.Connect.Prometheus.Worker.csproj"
-COPY . .
+COPY . "Garmin.Connect.Prometheus.Worker/"
 WORKDIR "/src/Garmin.Connect.Prometheus.Worker"
 RUN dotnet build "Garmin.Connect.Prometheus.Worker.csproj" -c Release -o /app/build
 

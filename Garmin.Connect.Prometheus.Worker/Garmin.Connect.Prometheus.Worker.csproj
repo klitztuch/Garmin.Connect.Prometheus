@@ -20,4 +20,8 @@
         <Link>.dockerignore</Link>
       </Content>
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Garmin.Connect.Prometheus.Lib\Garmin.Connect.Prometheus.Lib.csproj" />
+    </ItemGroup>
 </Project>
